@@ -1,6 +1,6 @@
 package com.gymwatch.controller;
 /**
- * Runner object for GymWatch1.0 Application
+ * Runner object for GymWatch3.0 Application
  * @author Enayat
  *
  */
