@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/gym_watch</property>
+        <property name="connection.username">gym_watch</property>
+        <property name="connection.password">gymwatch</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">3</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <!-- First method to mapping: using annotation. These statements direct
+        to hibernate to look for annotation in these classes -->
+        <mapping class="com.gymwatch.model.Client"/>
+        <mapping class="com.gymwatch.model.Coach"/>
+        <mapping class="com.gymwatch.model.Gym"/>
+        <mapping class="com.gymwatch.model.Manager"/>
+        <mapping class="com.gymwatch.model.Person"/>
+        <mapping class="com.gymwatch.model.Subscription"/>
+        <mapping class="com.gymwatch.model.SubType"/>
+         <mapping class="com.gymwatch.model.User"/>
+
+        <!--mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/-->
+
+    </session-factory>
+
+</hibernate-configuration>
